@@ -71,7 +71,7 @@ class Worker(multiprocessing.Process):
 
     def set_bound(self, key, marker, retries, type_=None):
         # api doesn't allow setting a bound with a blank marker
-        if marker:
+        if marker != ' ':
             if type_ is None:
                 type_ = self.type
             try:
